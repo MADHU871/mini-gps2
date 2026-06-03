@@ -1,19 +1,36 @@
-const express = require("express");
+const express = require('express');
 
 const app = express();
+const PORT = 3001;
 
-app.get("/", (req, res) => {
-    res.send("Rollr Mini GPS Running Successfully");
+// Initial GPS Location
+let gpsData = {
+    latitude: 17.3850,
+    longitude: 78.4867,
+    speed: 40,
+    timestamp: new Date()
+};
+
+// API Endpoint
+app.get('/gps', (req, res) => {
+    res.json(gpsData);
 });
 
-app.get("/location", (req, res) => {
-    res.json({
-        vehicle: "Car-001",
-        latitude: 16.239,
-        longitude: 80.048
-    });
+// Home Route
+app.get('/', (req, res) => {
+    res.send('Mini GPS Tracking Backend Running 🚗');
 });
 
-app.listen(3000, () => {
-    console.log("Server running on port 3000");
+// Simulate Vehicle Movement Every 5 Seconds
+setInterval(() => {
+    gpsData.latitude += 0.0001;
+    gpsData.longitude += 0.0001;
+    gpsData.timestamp = new Date();
+
+    console.log('Updated GPS:', gpsData);
+}, 5000);
+
+// Start Server
+app.listen(PORT, () => {
+    console.log(`Server running on http://localhost:${PORT}`);
 });
