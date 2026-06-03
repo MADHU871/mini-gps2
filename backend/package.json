@@ -1,15 +1,12 @@
 {
-  "name": "mini-gps",
+  "name": "rollr-mini",
   "version": "1.0.0",
+  "description": "Rollr Mini Smart Car Monitoring Platform",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
   },
   "dependencies": {
-    "express": "^4.22.2"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": ""
+    "express": "^4.19.2"
+  }
 }

@@ -1,24 +1,28 @@
-let map;
-let marker;
+async function loadVehicle() {
 
-function initMap(lat, lng) {
+    const response =
+        await fetch("/api/vehicle");
 
-    map = new google.maps.Map(
-        document.getElementById("map"),
-        {
-            zoom: 15,
-            center: {
-                lat: lat,
-                lng: lng
-            }
-        }
-    );
+    const data =
+        await response.json();
 
-    marker = new google.maps.Marker({
-        position: {
-            lat: lat,
-            lng: lng
-        },
-        map: map
-    });
+    document.getElementById("vehicle").innerText =
+        data.vehicle;
+
+    document.getElementById("status").innerText =
+        data.status;
+
+    document.getElementById("speed").innerText =
+        data.speed;
+
+    document.getElementById("fuel").innerText =
+        data.fuel;
+
+    document.getElementById("lat").innerText =
+        data.latitude;
+
+    document.getElementById("lng").innerText =
+        data.longitude;
 }
+
+loadVehicle();

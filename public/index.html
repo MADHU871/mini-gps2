@@ -1,16 +1,41 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Mini GPS Dashboard</title>
-
+    <title>Rollr Mini Dashboard</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<h1>Rollr Mini Dashboard</h1>
+<h1>🚗 Rollr Mini Dashboard</h1>
 
-<div id="map"></div>
+<div class="card">
+    <h2>Vehicle Information</h2>
+
+    <p><strong>Vehicle:</strong>
+        <span id="vehicle"></span>
+    </p>
+
+    <p><strong>Status:</strong>
+        <span id="status"></span>
+    </p>
+
+    <p><strong>Speed:</strong>
+        <span id="speed"></span> km/h
+    </p>
+
+    <p><strong>Fuel:</strong>
+        <span id="fuel"></span> %
+    </p>
+
+    <p><strong>Latitude:</strong>
+        <span id="lat"></span>
+    </p>
+
+    <p><strong>Longitude:</strong>
+        <span id="lng"></span>
+    </p>
+
+</div>
 
 <script src="app.js"></script>
 
